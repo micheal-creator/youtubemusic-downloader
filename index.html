@@ -1,6 +1,4 @@
-// ✅ Fixed
-const BACKEND_URL = "https://youtubemusic-downloader-1.onrender.com";
-const response = await fetch(`${BACKEND_URL}/api/parse`, { ... });
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,7 +69,8 @@ const response = await fetch(`${BACKEND_URL}/api/parse`, { ... });
       tbody.innerHTML = '';
 
       try {
-        const response = await fetch('/api/parse', {
+        const BACKEND_URL = "https://youtubemusic-downloader-1.onrender.com";
+        const response = await fetch('${BACKEND_URL}/api/parse', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url })
@@ -117,7 +116,7 @@ const response = await fetch(`${BACKEND_URL}/api/parse`, { ... });
       btnElement.disabled = true;
 
       try {
-        const res = await fetch('/api/download', {
+        const res = await fetch('${BACKEND_URL}/api/download', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url })
