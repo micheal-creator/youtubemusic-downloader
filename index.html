@@ -1,4 +1,6 @@
-
+// ✅ Fixed
+const BACKEND_URL = "https://youtubemusic-downloader-1.onrender.com";
+const response = await fetch(`${BACKEND_URL}/api/parse`, { ... });
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,9 +90,7 @@
         document.getElementById('loader').classList.add('hidden');
       }
     }
-// ✅ Fixed
-const BACKEND_URL = "https://youtubemusic-downloader-1.onrender.com";
-const response = await fetch(`${BACKEND_URL}/api/parse`, { ... });
+
     
     function renderTracks(tracks) {
       const tbody = document.getElementById('trackList');
