@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +49,6 @@
   </div>
 
   <script>
-    const BACKEND_URL = "https://youtubemusic-downloader-1.onrender.com";
     let tracksData = [];
 
     function formatTime(seconds) {
@@ -69,8 +67,7 @@
       tbody.innerHTML = '';
 
       try {
-       
-        const response = await fetch('${BACKEND_URL}/api/parse', {
+        const response = await fetch('/api/parse', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url })
@@ -90,7 +87,6 @@
       }
     }
 
-    
     function renderTracks(tracks) {
       const tbody = document.getElementById('trackList');
       tbody.innerHTML = tracks.map((track, i) => `
@@ -116,7 +112,7 @@
       btnElement.disabled = true;
 
       try {
-        const res = await fetch('${BACKEND_URL}/api/download', {
+        const res = await fetch('/api/download', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url })
